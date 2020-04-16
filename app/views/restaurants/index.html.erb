@@ -1,0 +1,14 @@
+<div class="container mx-3">
+  <div class="">
+    <h1 class="restaurants">Restaurants</h1>
+    <strong><%= link_to "Enter new restaurant", new_restaurant_path %></strong>
+    <hr>
+    <% @restaurants.each do |restaurant| %>
+      <li><%= link_to "#{restaurant.name}", restaurant_path(restaurant) %>
+        <%= link_to edit_restaurant_path(restaurant) do %>
+        <i class="fa fa-pencil mx-2 fa-lg my-0"></i>
+        <% end %>
+      </li>
+      <% end %>
+  </div>
+</div>

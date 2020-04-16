@@ -5,7 +5,9 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
-  def show; end
+  def show
+    @review = Review.new
+  end
 
   def new
     @restaurant = Restaurant.new
@@ -31,10 +33,10 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  def destroy
-    @restaurant.destroy
-    redirect_to restaurants_path
-  end
+  # def destroy
+  #   @restaurant.destroy
+  #   redirect_to restaurants_path
+  # end
 
   private
 
